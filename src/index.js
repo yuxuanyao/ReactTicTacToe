@@ -5,11 +5,27 @@ import './index.css';
 
 // Square function
 function Square(props) {
-  return (
-    <button className="square" onClick={props.onClick}>
-      {props.value}
-    </button>
-  );
+  if (props.value === 'X') {
+    return (
+      <button className="square" id="classx" onClick={props.onClick}>
+        {props.value}
+      </button>
+    );
+  }
+  else if (props.value === 'O') {
+    return (
+      <button className="square" id="classo" onClick={props.onClick}>
+        {props.value}
+      </button>
+    );
+  }
+  else {
+    return (
+      <button className="square" onClick={props.onClick}>
+        {props.value}
+      </button>
+    );
+  }
 }
 
 // Game Board class
