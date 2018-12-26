@@ -109,23 +109,29 @@ class Game extends React.Component {
 
     // display status
     let status;
-    if (winner) {
+    if (winner === "draw") {
+      status = "Draw";
+    }
+    else if (winner) {
       status = "Winner: " + winner;
-    } else {
+    }
+    else {
       status = "Next player: " + (this.state.xIsNext ? "X" : "O");
     }
 
     return (
-      <div className="game">
-        <div className="game-board">
-          <Board
-            squares={current.squares}
-            onClick={i => this.handleClick(i)}
-          />
-        </div>
-        <div className="game-info">
-          <div>{status}</div>
-          <ol>{moves}</ol>
+      <div className="container">
+        <div className="game">
+          <div className="game-board">
+            <Board
+              squares={current.squares}
+              onClick={i => this.handleClick(i)}
+            />
+          </div>
+          <div className="game-info">
+            <div>{status}</div>
+            <ol>{moves}</ol>
+          </div>
         </div>
       </div>
     );
@@ -153,6 +159,15 @@ function calculateWinner(squares) {
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
       return squares[a];
     }
+  }
+  var draw = true;
+  for (let i = 0; i < 9; i++) {
+    if (!squares[i]) {
+      draw = false;
+    }
+  }
+  if (draw) {
+    return "draw";
   }
   return null;
 }
