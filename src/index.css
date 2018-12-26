@@ -39,10 +39,10 @@ ol, ul {
 }
 
 #classx {
-  color: cornflowerblue;
+  color: salmon;
 }
 #classo {
-  color: salmon;
+  color: cornflowerblue;
 }
 .square:focus {
   outline: none;
