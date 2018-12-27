@@ -7,4 +7,4 @@ Link to tutorial : https://reactjs.org/tutorial/tutorial.html
 I have made some modifications to this so it looks better :) 
 - Responsiveness (enlarged game board on full screen desktop)
 - Tie Game (the original tutorial had "next move" displayed when neither players won, which seemed incorrect to me)
-- Color (I changed the color of the X's and O's to make it look better)
+- Color (I changed the color of the X's and O's to make it look more like the original game)
